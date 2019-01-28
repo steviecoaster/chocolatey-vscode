@@ -105,7 +105,40 @@
 					".nupkg"
 				]
 			}
-		]
+		],
+
+		"menus": {
+			"touchBar": [
+			  {
+				"command": "chocolatey.new",
+				"when": "editorLangId == powershell",
+				"group": "Chocolatey"
+			  },
+			  {
+				"command": "chocolatey.pack",
+				"when": "editorLangId == powershell",
+				"group": "Chocolatey"
+		      },
+			  {
+				"command": "chocolatey.delete",
+				"when": "editorLangId == powershell",
+				"group": "Chocolatey"
+			  },
+			  {
+				"command": "chocolatey.push",
+				"when": "editorLangId == powershell",
+				"group": "Chocolatey"
+			  },
+			  {
+				"command": "chocolatey.installTemplates",
+				"when": "editorLangId == powershell",
+				"group": "Chocolatey"
+			  }
+			
+			]
+		   }
+
+
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
