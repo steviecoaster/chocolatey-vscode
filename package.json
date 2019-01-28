@@ -106,47 +106,42 @@
 				]
 			}
 		],
-
 		"menus": {
 			"touchBar": [
-			  {
-				"command": "chocolatey.new",
-				"when": "editorLangId == powershell",
-				"group": "Chocolatey"
-			  },
-			  {
-				"command": "chocolatey.pack",
-				"when": "editorLangId == powershell",
-				"group": "Chocolatey"
-		      },
-			  {
-				"command": "chocolatey.delete",
-				"when": "editorLangId == powershell",
-				"group": "Chocolatey"
-			  },
-			  {
-				"command": "chocolatey.push",
-				"when": "editorLangId == powershell",
-				"group": "Chocolatey"
-			  },
-			  {
-				"command": "chocolatey.installTemplates",
-				"when": "editorLangId == powershell",
-				"group": "Chocolatey"
-			  }
-			
+				{
+					"command": "chocolatey.new",
+					"when": "editorLangId == powershell",
+					"group": "Chocolatey"
+				},
+				{
+					"command": "chocolatey.pack",
+					"when": "editorLangId == powershell",
+					"group": "Chocolatey"
+				},
+				{
+					"command": "chocolatey.delete",
+					"when": "editorLangId == powershell",
+					"group": "Chocolatey"
+				},
+				{
+					"command": "chocolatey.push",
+					"when": "editorLangId == powershell",
+					"group": "Chocolatey"
+				},
+				{
+					"command": "chocolatey.installTemplates",
+					"when": "editorLangId == powershell",
+					"group": "Chocolatey"
+				}
 			]
-		   }
-
-
+		}
 	},
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "%APPDATA%/npm/tsc -p ./",
-		"watch": "%APPDATA%/npm/tsc -watch -p ./",
+		"compile": "tsc -v && tsc -p ./ && tslint -p ./",
+		"compile-watch": "tsc -watch -p ./",
 		"postinstall": "node ./node_modules/vscode/bin/install",
-		"test": "npm run compile && node ./node_modules/vscode/bin/test"
-	},
+		"test": "node ./node_modules/vscode/bin/test"
+	  },
 	"devDependencies": {
 		"@types/byline": "^4.2.31",
 		"@types/expect": "^1.20.3",
